@@ -1,28 +1,23 @@
-//const winston = require('winston');
-
 const { createLogger, format, transports } = require('winston');
-const { combine, timestamp, prettyPrint, printf } = format;
+const { combine, timestamp, prettyPrint, json } = format;
+require("winston-daily-rotate-file");
 
-const myFormat = printf(({ level, message, timestamp }) => {
-    return {key:`${timestamp} [${level}]  ${message}`};
-    
-  });
+var transport = new transports.DailyRotateFile({
+  filename: "./logger/Log-%DATE%.log",
+  datePattern: "DD-MM-YYYY",
+  zippedArchive: true,
+  maxSize: "20m",
+  maxFiles: "14d",
+});
 
-const logger=()=>{
-    return createLogger({
-        level: 'info',
+const logger=()=>createLogger({
+        level: "info",
         format: combine(
-            format.colorize(), 
             timestamp({format:"HH:mm:ss"}),
-            format.json(),
+            json(),
             prettyPrint(),
             myFormat
             ),
-        //defaultMeta: { service: 'user-service' },
-        transports: [
-          new transports.File({
-            filename:'info.log'
-          })],
-      });
-}
+        transports:[transports],
+        });
 module.exports=logger;
