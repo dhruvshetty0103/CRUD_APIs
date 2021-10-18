@@ -1,25 +1,22 @@
-const express = require("express");
 const validate = require("../middleware/user.middleware.js");
-const userControl = require('../controllers/user.controller.js');
-const route=express.Router();
+const express = require("express");
+const userController = require("../controllers/user.controller.js");
+const userRoute = express.Router();
 
-/*
-    Usage of middleware here for the title and content
-    pattern validation and if successful then
-    Create a new Note
-*/ 
-route.post('/create',validate, userControl.createNote);
+
+// Create a new Note
+userRoute.post("/", validate, userController.createUser);
 
 // Retrieve all Notes
-route.get('/getAllUser', userControl.findAll);
+userRoute.get("/", userController.findAll);
 
 // Retrieve a single Note with noteId
-route.get('/:userId', userControl.findOne);
+userRoute.get("/:userId", userController.findOne);
 
 // Update a Note with noteId
-route.put('/:userId', userControl.updateNote);
+userRoute.put("/:userId", userController.updateUser);
 
 // Delete a Note with noteId
-route.delete('/:userId', userControl.deleteOne);
+userRoute.delete("/:userId", userController.deleteOne);
 
-module.exports=route;
+module.exports = userRoute;

@@ -1,37 +1,35 @@
-const userService = require("../service/user.service");
+const userService = require("../service/user.service.js");
 
 class userController {
   //creates a user in the database
   createUser = (req, res) => {
-    let name = req.body.name || "Untitled User";
-    let phoneNumber=req.body.phoneNumber;
-    let email=req.body.email;
+    let name = req.body.name|| "Untitled Name";
     let password = req.body.password;
-    userService.createUser(title,phoneNumber,email, password, (err, data) => {
+    userService.createUser(name, password, (err, data) => {
       if (err) {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while creating the User.",
+            err.message || "Some error occurred while creating the user.",
         });
       }
       res.status(200).send(data);
     });
   };
 
-  // Retrieve and return all Users from the database.
+  // Retrieve and return all users from the database.
   findAll = (req, res) => {
     userService.findAll((err, data) => {
       if (err) {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while creating the User.",
+            err.message || "Some error occurred while creating the user.",
         });
       }
       res.status(200).send(data);
     });
   };
 
-  // Find a single User with a UserId
+  // Find a single user with a userId
   findOne = (req, res) => {
     let id = req.params.userId;
     userService.findOne(id, (err, data) => {
@@ -42,7 +40,7 @@ class userController {
           });
         }
         return res.status(500).send({
-          message: "Error retrieving User with id " + id,
+          message: "Error retrieving user with id " + id,
         });
       }
       if (!data) {
@@ -54,14 +52,12 @@ class userController {
     });
   };
 
-  // Update a User identified by the UserId in the request
+  // Update a user identified by the userId in the request
   updateUser = (req, res) => {
     let id = req.params.userId;
     let name = req.body.name;
-    let phoneNumber=req.body.phoneNumber;
-    let email=req.body.email;
     let password = req.body.password;
-    userService.updateUser(id,name, phoneNumber,email,password, (err, data) => {
+    userService.updateUser(id, name, password, (err, data) => {
       if (err) {
         if (err.kind === "ObjectId") {
           return res.status(404).send({
@@ -69,7 +65,7 @@ class userController {
           });
         }
         return res.status(500).send({
-          message: "Error updating User with id " + id,
+          message: "Error updating user with id " + id,
         });
       }
       if (!data) {
@@ -81,7 +77,7 @@ class userController {
     });
   };
 
-  // Delete a User with the specified UserId in the request
+  // Delete a user with the specified userId in the request
   deleteOne = (req, res) => {
     let id = req.params.userId;
     userService.deleteOne(id, (err, data) => {
@@ -92,7 +88,7 @@ class userController {
           });
         }
         return res.status(500).send({
-          message: "Error deleting User with id " + id,
+          message: "Error deleting user with id " + id,
         });
       }
       if (!data) {
