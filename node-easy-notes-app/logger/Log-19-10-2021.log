@@ -1,0 +1,15 @@
+{
+  message: 'Server is listening on port 3000',
+  level: 'info',
+  timestamp: '19-10-2021, 19:11:24'
+}
+{
+  message: 'Server is listening on port 3000',
+  level: 'info',
+  timestamp: '19-10-2021, 19:21:49'
+}
+{
+  message: 'Successfully connected to the database',
+  level: 'info',
+  timestamp: '19-10-2021, 19:21:49'
+}
