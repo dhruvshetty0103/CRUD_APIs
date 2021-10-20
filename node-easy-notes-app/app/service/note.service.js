@@ -1,8 +1,8 @@
 const noteModel = require("../models/note.model.js");
 
 class noteService {
-  createNote = (title, content,callback) => {
-    noteModel.createNote(title, content,(err,data)=>{
+  createNote = (body,callback) => {
+    noteModel.createNote(body.title, body.content,(err,data)=>{
         return err ? callback(err, null) : callback(null, data);
     })
       
@@ -20,8 +20,8 @@ class noteService {
     });
   };
 
-  updateNote = (findId, title, content,callback) => {
-    noteModel.updateNote(findId,title,content,(err,data) => {
+  updateNote = (findId, body,callback) => {
+    noteModel.updateNote(findId,body.title,body.content,(err,data) => {
         return err ? callback(err, null) : callback(null, data);
       }
     );

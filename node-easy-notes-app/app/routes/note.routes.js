@@ -1,6 +1,6 @@
 const validate = require("../middleware/note.middleware.js");
 const express = require("express");
-const noteController = require("../controllers/note.controller.js");
+const noteController = require("../controllers/note/note.controller.js");
 const noteRoute = express.Router();
 
 

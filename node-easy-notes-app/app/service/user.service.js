@@ -1,8 +1,8 @@
 const userModel = require("../models/user.model.js");
 
 class userService {
-  createUser = (name, password,callback) => {
-    userModel.createUser(name, password,(err,data)=>{
+  createUser = (body,callback) => {
+    userModel.createUser(body.name,body.email,body.phoneNumber, body.password,(err,data)=>{
         return err ? callback(err, null) : callback(null, data);
     })
       
@@ -20,8 +20,8 @@ class userService {
     });
   };
 
-  updateUser = (findId, name, password,callback) => {
-    userModel.updateUser(findId,name,password,(err,data) => {
+  updateUser = (findId,body,callback) => {
+    userModel.updateUser(findId,body.name,body.email,body.phoneNumber, body.password,(err,data) => {
         return err ? callback(err, null) : callback(null, data);
       }
     );

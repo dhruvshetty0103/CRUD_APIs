@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const UserSchema = mongoose.Schema({
     name: String,
+    email:String,
+    phoneNumber:Number,
     password: String 
 }, {
     timestamps: true
@@ -11,9 +13,11 @@ const myUser = mongoose.model("User", UserSchema);
 
 class userModel {
     //creates a user and saves it in database
-    createUser = (name, password, callback) => {
+    createUser = (name,email,phoneNumber, password, callback) => {
       const user = new myUser({
         name: name,
+        email:email,
+        phoneNumber:phoneNumber,
         password: password,
       });
       // Save user in the database
@@ -38,12 +42,14 @@ class userModel {
     
   
     // Update a user identified by the userId in the request
-    updateUser = (userId, name, password, callback) => {
+    updateUser = (userId, name,email,phoneNumber, password, callback) => {
       // Find user and update it with the request body
       myUser.findByIdAndUpdate(
         userId,
         {
             name: name || "Unnamed user",
+            email:email,
+            phoneNumber:phoneNumber,
             password: password,
         },
         { new: true },

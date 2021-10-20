@@ -1,135 +1,170 @@
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 19:11:24'
-}
-{
-  message: 'Server is listening on port 3000',
-  level: 'info',
-  timestamp: '19-10-2021, 19:21:49'
+  timestamp: '20-10-2021, 19:42:00'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 19:21:49'
+  timestamp: '20-10-2021, 19:42:00'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:00:28'
+  timestamp: '20-10-2021, 20:01:02'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:00:28'
+  timestamp: '20-10-2021, 20:01:02'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:03:03'
+  timestamp: '20-10-2021, 20:04:28'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:03:03'
+  timestamp: '20-10-2021, 20:04:28'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:36:53'
+  timestamp: '20-10-2021, 20:19:02'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:36:53'
+  timestamp: '20-10-2021, 20:19:02'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:37:44'
+  timestamp: '20-10-2021, 20:22:18'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:37:44'
+  timestamp: '20-10-2021, 20:22:19'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:37:48'
+  timestamp: '20-10-2021, 20:25:37'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:37:48'
+  timestamp: '20-10-2021, 20:25:37'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:38:14'
+  timestamp: '20-10-2021, 20:26:57'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:38:14'
+  timestamp: '20-10-2021, 20:26:57'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:38:49'
+  timestamp: '20-10-2021, 20:30:25'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:38:49'
+  timestamp: '20-10-2021, 20:30:25'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:44:28'
+  timestamp: '20-10-2021, 20:36:51'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:44:28'
+  timestamp: '20-10-2021, 20:36:51'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:45:15'
+  timestamp: '20-10-2021, 20:39:13'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:45:15'
+  timestamp: '20-10-2021, 20:39:13'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:45:52'
+  timestamp: '20-10-2021, 20:40:53'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:45:52'
+  timestamp: '20-10-2021, 20:40:53'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:48:53'
+  timestamp: '20-10-2021, 20:58:03'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:48:53'
+  timestamp: '20-10-2021, 20:58:03'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '19-10-2021, 20:51:52'
+  timestamp: '20-10-2021, 20:59:32'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '19-10-2021, 20:51:52'
+  timestamp: '20-10-2021, 20:59:32'
+}
+{
+  message: 'Server is listening on port 3000',
+  level: 'info',
+  timestamp: '20-10-2021, 20:59:36'
+}
+{
+  message: 'Successfully connected to the database',
+  level: 'info',
+  timestamp: '20-10-2021, 20:59:36'
+}
+{
+  message: 'Server is listening on port 3000',
+  level: 'info',
+  timestamp: '20-10-2021, 20:59:52'
+}
+{
+  message: 'Successfully connected to the database',
+  level: 'info',
+  timestamp: '20-10-2021, 20:59:52'
+}
+{
+  message: 'Server is listening on port 3000',
+  level: 'info',
+  timestamp: '20-10-2021, 20:59:57'
+}
+{
+  message: 'Successfully connected to the database',
+  level: 'info',
+  timestamp: '20-10-2021, 20:59:57'
+}
+{
+  message: 'Server is listening on port 3000',
+  level: 'info',
+  timestamp: '20-10-2021, 21:00:09'
+}
+{
+  message: 'Successfully connected to the database',
+  level: 'info',
+  timestamp: '20-10-2021, 21:00:09'
 }
