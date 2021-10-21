@@ -4,6 +4,29 @@ const logger = require("../../../logger/logger.js");
 let responseObject;
 
 class userController {
+
+  /**
+   * @description Handles request and response for user login
+   * @param {Object} req
+   * @param {Object} res
+   */
+  
+  loginUser = (req, res) => {
+    let body = req.body;
+    userService.loginUser(body, (err, data) => {
+      if (err) {
+        logger.error(err);
+        responseObject = dtoObject.userApiFailure;
+        responseObject.message = err;
+        return res.send(responseObject);
+      }
+      logger.info("login Successful");
+      responseObject = dtoObject.userApiSuccess;
+      responseObject.message = data;
+      res.send(responseObject);
+    });
+  };
+
   //creates a user in the database
   createUser = (req, res) => {
     let body = req.body;

@@ -1,11 +1,25 @@
-const validate = require("../middleware/user.middleware.js");
 const express = require("express");
 const userController = require("../controllers/user/user.controller.js");
 const userRoute = express.Router();
+const userMiddleware = require("../middleware/user.middleware");
+const { body } = require("express-validator");
 
 
-// Create a new Note
-userRoute.post("/", validate, userController.createUser);
+//User login
+userRoute.post("/login", userController.loginUser);
+
+// Create a new User
+userRoute.post(
+  "/",
+  body("name")
+    .matches("^[A-Z][a-zA-Z]{2,}")
+    .withMessage(
+      "First Name should begin with caps and should be minimum of length 3"
+    ),
+  body("phoneNumber").isNumeric().withMessage("Enter a valid phoneNumber"),
+  body("email").isEmail().withMessage("Enter a valid Email"),
+  userController.createUser
+);
 
 // Retrieve all Notes
 userRoute.get("/", userController.findAll);

@@ -1,180 +1,245 @@
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 19:42:00'
+  timestamp: '21-10-2021, 20:07:21'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 19:42:00'
+  timestamp: '21-10-2021, 20:07:22'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:01:02'
+  timestamp: '21-10-2021, 20:19:51'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:01:02'
+  timestamp: '21-10-2021, 20:19:51'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:04:28'
+  timestamp: '21-10-2021, 20:20:13'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:04:28'
+  timestamp: '21-10-2021, 20:20:13'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:19:02'
+  timestamp: '21-10-2021, 20:23:55'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:19:02'
+  timestamp: '21-10-2021, 20:23:55'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:22:18'
+  timestamp: '21-10-2021, 20:24:26'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:22:19'
+  timestamp: '21-10-2021, 20:24:26'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:25:37'
+  timestamp: '21-10-2021, 20:24:43'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:25:37'
+  timestamp: '21-10-2021, 20:24:43'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:26:57'
+  timestamp: '21-10-2021, 20:25:03'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:26:57'
+  timestamp: '21-10-2021, 20:25:04'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:30:25'
+  timestamp: '21-10-2021, 20:25:08'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:30:25'
+  timestamp: '21-10-2021, 20:25:08'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 20:25:09'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 20:25:47'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:36:51'
+  timestamp: '21-10-2021, 20:27:53'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:36:51'
+  timestamp: '21-10-2021, 20:27:53'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 20:27:56'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 20:28:56'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 20:28:56'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 20:28:57'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 20:29:27'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 20:33:32'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:39:13'
+  timestamp: '21-10-2021, 20:35:58'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:39:13'
+  timestamp: '21-10-2021, 20:35:58'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:40:53'
+  timestamp: '21-10-2021, 20:37:13'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:40:53'
+  timestamp: '21-10-2021, 20:37:13'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:58:03'
+  timestamp: '21-10-2021, 20:38:50'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:58:03'
+  timestamp: '21-10-2021, 20:38:50'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:59:32'
+  timestamp: '21-10-2021, 20:40:06'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:59:32'
+  timestamp: '21-10-2021, 20:40:06'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:59:36'
+  timestamp: '21-10-2021, 20:43:12'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:59:36'
+  timestamp: '21-10-2021, 20:43:12'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:59:52'
+  timestamp: '21-10-2021, 20:50:12'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:59:52'
+  timestamp: '21-10-2021, 20:50:12'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 20:59:57'
+  timestamp: '21-10-2021, 20:50:33'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 20:59:57'
+  timestamp: '21-10-2021, 20:50:33'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 20:50:40'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 21:00:09'
+  timestamp: '21-10-2021, 21:02:21'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 21:00:09'
+  timestamp: '21-10-2021, 21:02:21'
 }
 {
   message: 'Server is listening on port 3000',
   level: 'info',
-  timestamp: '20-10-2021, 21:01:31'
+  timestamp: '21-10-2021, 21:02:49'
 }
 {
   message: 'Successfully connected to the database',
   level: 'info',
-  timestamp: '20-10-2021, 21:01:31'
+  timestamp: '21-10-2021, 21:02:49'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 21:02:52'
+}
+{
+  message: 'password mismatch',
+  level: 'error',
+  timestamp: '21-10-2021, 21:03:10'
+}
+{
+  message: 'Server is listening on port 3000',
+  level: 'info',
+  timestamp: '21-10-2021, 21:04:32'
+}
+{
+  message: 'Successfully connected to the database',
+  level: 'info',
+  timestamp: '21-10-2021, 21:04:32'
 }

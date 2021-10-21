@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcrypt');
 const UserSchema = mongoose.Schema({
     name: String,
     email:String,
@@ -10,15 +10,27 @@ const UserSchema = mongoose.Schema({
 });
 
 const myUser = mongoose.model("User", UserSchema);
-
+let encryptedPassword;
 class userModel {
+  loginUser = (body, callback) => {
+    return myUser.findOne({ email: body.email }, (err, data) => {
+      return err
+        ? callback(err, null)
+        : data == null
+        ? callback("Email id is not present", null)
+        : callback(null, data);
+    });
+  };
+
+
     //creates a user and saves it in database
     createUser = (name,email,phoneNumber, password, callback) => {
+      encryptedPassword = bcrypt.hashSync(password, 10);
       const user = new myUser({
         name: name,
         email:email,
         phoneNumber:phoneNumber,
-        password: password,
+        password: encryptedPassword,
       });
       // Save user in the database
       return user.save((err, data) => {
