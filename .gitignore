@@ -1,3 +1,4 @@
+node-easy-notes-app/logger/*.log
 node-easy-notes-app/node_modules/
 node-easy-notes-app/package-lock.json/
 node-easy-notes-app/.ENV
