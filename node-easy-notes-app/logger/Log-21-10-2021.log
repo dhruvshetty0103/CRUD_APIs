@@ -243,3 +243,18 @@
   level: 'info',
   timestamp: '21-10-2021, 21:04:32'
 }
+{
+  message: 'Server is listening on port 3000',
+  level: 'info',
+  timestamp: '21-10-2021, 21:05:04'
+}
+{
+  message: 'Successfully connected to the database',
+  level: 'info',
+  timestamp: '21-10-2021, 21:05:04'
+}
+{
+  message: 'login Successful',
+  level: 'info',
+  timestamp: '21-10-2021, 21:05:38'
+}

@@ -4,6 +4,10 @@ const logger=require('./logger/logger.js');
 const noteRouter = require('./app/routes/note.routes.js');
 const userRouter = require('./app/routes/user.routes.js');
 const db = require('./config/dbConnect.js');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
+
 // create express app
 const app = express();
 
@@ -14,6 +18,8 @@ app.use(express.json());
 
 app.use('/notes',noteRouter);
 app.use('/users',userRouter);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 mongoose.Promise = global.Promise;
 
