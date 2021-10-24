@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwtHelper = require("../../utility/jwt");
 const UserSchema = mongoose.Schema({
     name: String,
     email:String,
     phoneNumber:Number,
-    password: String 
+    password: String ,
+    resetPasswordToken: String,
+    resetPasswordExpires: Date
 }, {
     timestamps: true
 });
@@ -77,6 +80,63 @@ class userModel {
         return err ? callback(err, null) : callback(null, data);
       });
     };
+
+    // Forgot password with the specified userId in the request
+    forgotPassword = (email) => {
+      return myUser
+        .findOne({ email: email })
+        .then((data) => {
+          if (!data) {
+            throw "Email not found";
+          } else {
+            let randomToken = jwtHelper.generateRandomCode();
+            data.resetPasswordToken = randomToken;
+            data.resetPasswordExpires = Date.now() + 3600000;
+            return data
+              .save()
+              .then((res) => {
+                return res;
+              })
+              .catch((err) => {
+                throw err;
+              });
+          }
+        })
+        .catch((err) => {
+          throw err;
+        });
+    };
+    
+    //Model function for user password reset
+    resetPassword = (token, newPassword) => {
+      return myUser
+        .findOne({
+          resetPasswordToken: token,
+          resetPasswordExpires: { $gt: Date.now() },
+        })
+        .then((data) => {
+          if (!data) {
+            throw "token not found";
+          } else {
+            encryptedPassword = bcrypt.hashSync(newPassword, 10);
+            (data.password = encryptedPassword),
+              (data.resetPasswordToken = undefined),
+              (data.resetPasswordExpires = undefined);
+            return data
+              .save()
+              .then((data) => {
+                return data;
+              })
+              .catch((err) => {
+                throw err;
+              });
+          }
+        })
+        .catch((err) => {
+          throw err;
+        });
+    };
+
   }
   
 module.exports = new userModel();

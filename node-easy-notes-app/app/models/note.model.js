@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const NoteSchema = mongoose.Schema({
     title: String,
     content: String,
-    
+    //userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 }, {
     timestamps: true
 });
@@ -16,6 +16,7 @@ class noteModel {
       const note = new myNote({
         title: title,
         content: content,
+        //userId: userId,
       });
       // Save Note in the database
       return note.save((err, data) => {

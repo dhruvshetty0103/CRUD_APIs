@@ -33,4 +33,10 @@ userRoute.put("/:userId", userController.updateUser);
 // Delete a Note with noteId
 userRoute.delete("/:userId", userController.deleteOne);
 
+//forgot password route
+userRoute.post("/forgot", userController.forgotPassword);
+
+//email password reset route
+userRoute.post("/reset/:token", userController.resetPassword);
+
 module.exports = userRoute;

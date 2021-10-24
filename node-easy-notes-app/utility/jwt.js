@@ -1,5 +1,6 @@
 require('dotenv').config();
 const jwt = require("jsonwebtoken");
+const crypto = require('crypto');
 
 exports.generateToken = (email) => {
   return jwt.sign(
@@ -16,3 +17,7 @@ exports.verifyToken = (token,callback) => {
     return err ? callback(err, null) : callback(null, data);
    });
 };
+
+exports.generateRandomCode = () => {
+  return crypto.randomBytes(20).toString('hex');
+}

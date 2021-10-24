@@ -1,5 +1,6 @@
 const userModel = require("../models/user.model.js");
 const bcrypt = require("bcrypt");
+const mailHelper = require("../../utility/node.mailer.js");
 const jwtHelper = require("../../utility/jwt.js");
 class userService {
 
@@ -55,6 +56,34 @@ class userService {
     userModel.deleteOne(findId,(err,data) => {
         return err ? callback(err, null) : callback(null, data);
     });
+  };
+
+  forgotPassword = (email) => {
+    return userModel
+      .forgotPassword(email)
+      .then((data) => {
+        return mailHelper
+          .mailer(data.email, data.resetPasswordToken)
+          .then((data) => {
+            return data;
+          })
+          .catch((err) => {
+            throw err;
+          });
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
+  
+  resetPassword = (token,password) =>{
+    return userModel.resetPassword(token,password)
+    .then(data => {
+      return data;
+    })
+    .catch(err => {
+      throw err;
+    })
   };
 }
 

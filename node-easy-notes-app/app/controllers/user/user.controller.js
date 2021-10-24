@@ -131,6 +131,36 @@ class userController {
       res.send(responseObject);
     });
   };
-}
 
+
+  // Handles request for forgot the password
+
+  forgotPassword = (req, res) => {
+    let email = req.body.email;
+    userService
+      .forgotPassword(email)
+      .then((data) => {
+        res.send("Result:" + data);
+      })
+      .catch((err) => {
+        res.send(err);
+      });
+  };
+  
+  // Handles request and response for resetting the password
+   
+  resetPassword = (req, res) => {
+    let token = req.params.token;
+    let password = req.body.password
+    userService
+      .resetPassword(token,password)
+      .then((data) => {
+        res.json({message:"Password updated successfully","Result:" :data});
+      })
+      .catch((err) => {
+        console.log("error:" + err);
+        res.send(err);
+      });
+  }
+}
 module.exports = new userController();
