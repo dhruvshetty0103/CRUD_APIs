@@ -5,13 +5,13 @@ class nodeMailer{
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'sender mail',
-        pass: 'not to mention'
+        user: 'sender@email.com',
+        pass: 'senderPassword'
       }
     });
     
     var mailOptions = {
-      from: 'sender mail',
+      from: 'sender@email.com',
       to: email,
       subject: 'Sending Email using Node.js',
       html: `<a>${token}</a>`,

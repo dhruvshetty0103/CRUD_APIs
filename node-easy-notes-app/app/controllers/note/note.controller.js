@@ -21,7 +21,7 @@ class noteController {
 
   // Retrieve and return all notes from the database.
   findAll = (req, res) => {
-    noteService.findAll((err, data) => {
+    noteService.findAll(req.body.userId,(err, data) => {
       if (err) {
         responseObject = dtoObject.noteApiFailure;
         responseObject.message = err.message;
@@ -35,8 +35,7 @@ class noteController {
 
   // Find a single note with a noteId
   findOne = (req, res) => {
-    let id = req.params.noteId;
-    noteService.findOne(id, (err, data) => {
+    noteService.findOne(req.body.userId, req.params.noteId, (err, data) => {
       console.log("result: " + data);
       if (err) {
         console.log(err);
@@ -61,9 +60,8 @@ class noteController {
 
   // Update a note identified by the noteId in the request
   updateNote = (req, res) => {
-    let id = req.params.noteId;
     let body = req.body;
-    noteService.updateNote(id, body, (err, data) => {
+    noteService.updateNote(req.body.userId,req.params.noteId, body, (err, data) => {
       if (err) {
         if (err.kind === "ObjectId") {
           responseObject = dtoObject.noteApiFindFailure;
@@ -86,8 +84,7 @@ class noteController {
 
   // Delete a note with the specified noteId in the request
   deleteOne = (req, res) => {
-    let id = req.params.noteId;
-    noteService.deleteOne(id, (err, data) => {
+    noteService.deleteOne(req.body.userId,req.params.noteId, (err, data) => {
       if (err) {
         if (err.kind === "ObjectId") {
           responseObject = dtoObject.noteApiFindFailure;
@@ -108,5 +105,6 @@ class noteController {
     });
   };
 }
+
 
 module.exports = new noteController();

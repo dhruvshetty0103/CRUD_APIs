@@ -18,6 +18,7 @@ userRoute.post(
     ),
   body("phoneNumber").isNumeric().withMessage("Enter a valid phoneNumber"),
   body("email").isEmail().withMessage("Enter a valid Email"),
+  body("password"),
   userController.createUser
 );
 
@@ -28,7 +29,17 @@ userRoute.get("/", userController.findAll);
 userRoute.get("/:userId", userController.findOne);
 
 // Update a Note with noteId
-userRoute.put("/:userId", userController.updateUser);
+userRoute.put(
+  "/:userId",
+  body("name")
+    .matches("^[A-Z][a-zA-Z]{2,}")
+    .withMessage(
+      "First Name should begin with caps and should be minimum of length 3"
+    ),
+  body("phoneNumber").isNumeric().withMessage("Enter a valid phoneNumber"),
+  body("email").isEmail().withMessage("Enter a valid Email"),
+  body("password"),
+  userController.updateUser);
 
 // Delete a Note with noteId
 userRoute.delete("/:userId", userController.deleteOne);

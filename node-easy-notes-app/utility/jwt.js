@@ -2,10 +2,10 @@ require('dotenv').config();
 const jwt = require("jsonwebtoken");
 const crypto = require('crypto');
 
-exports.generateToken = (email) => {
+exports.generateToken = (id) => {
   return jwt.sign(
     {
-      email: email,
+      id: id,
     },
     process.env.mySecretKey,
     { expiresIn: "1h" }
