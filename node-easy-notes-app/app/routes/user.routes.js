@@ -1,53 +1,61 @@
-const express = require("express");
-const userController = require("../controllers/user/user.controller.js");
-const userRoute = express.Router();
-const userMiddleware = require("../middleware/user.middleware");
-const { body } = require("express-validator");
-
+const express = require('express')
+const userController = require('../controllers/user/user.controller.js')
+const userRoute = express.Router()
+const userMiddleware = require('../middleware/user.middleware')
+const { body } = require('express-validator')
 
 //User login
-userRoute.post("/login", userController.loginUser);
+userRoute.post('/login', userController.loginUser)
 
 // Create a new User
 userRoute.post(
-  "/",
-  body("name")
-    .matches("^[A-Z][a-zA-Z]{2,}")
+  '/',
+  body('firstName')
+    .matches('^[A-Z][a-zA-Z]{2,}')
     .withMessage(
-      "First Name should begin with caps and should be minimum of length 3"
+      'First Name should begin with caps and should be minimum of length 3'
     ),
-  body("phoneNumber").isNumeric().withMessage("Enter a valid phoneNumber"),
-  body("email").isEmail().withMessage("Enter a valid Email"),
-  body("password"),
+  body('lastName')
+    .matches('^[A-Z][a-zA-Z]{2,}')
+    .withMessage(
+      'First Name should begin with caps and should be minimum of length 3'
+    ),
+  body('email').isEmail().withMessage('Enter a valid Email'),
+  body('password'),
   userController.createUser
-);
+)
 
 // Retrieve all Notes
-userRoute.get("/", userController.findAll);
+userRoute.get('/', userController.findAll)
 
 // Retrieve a single Note with noteId
-userRoute.get("/:userId", userController.findOne);
+userRoute.get('/:userId', userController.findOne)
 
 // Update a Note with noteId
 userRoute.put(
-  "/:userId",
-  body("name")
-    .matches("^[A-Z][a-zA-Z]{2,}")
+  '/:userId',
+  body('firstName')
+    .matches('^[A-Z][a-zA-Z]{2,}')
     .withMessage(
-      "First Name should begin with caps and should be minimum of length 3"
+      'First Name should begin with caps and should be minimum of length 3'
     ),
-  body("phoneNumber").isNumeric().withMessage("Enter a valid phoneNumber"),
-  body("email").isEmail().withMessage("Enter a valid Email"),
-  body("password"),
-  userController.updateUser);
+  body('lastName')
+    .matches('^[A-Z][a-zA-Z]{2,}')
+    .withMessage(
+      'First Name should begin with caps and should be minimum of length 3'
+    ),
+  body('email').isEmail().withMessage('Enter a valid Email'),
+  body('password'),
+  userController.updateUser
+)
 
 // Delete a Note with noteId
-userRoute.delete("/:userId", userController.deleteOne);
+userRoute.delete('/:userId', userController.deleteOne)
 
 //forgot password route
-userRoute.post("/forgot", userController.forgotPassword);
+userRoute.post('/forgot', userController.forgotPassword)
 
 //email password reset route
-userRoute.post("/reset/:token", userController.resetPassword);
+userRoute.post('/reset/:token', userController.resetPassword)
 
-module.exports = userRoute;
+module.exports = userRoute

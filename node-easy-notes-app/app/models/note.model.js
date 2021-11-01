@@ -29,7 +29,7 @@ class noteModel {
       .find({ userId: userId })
       .populate({
         path: "userId",
-        select: ["name", "phoneNumber", "email"],
+        select: ["firstName", "lastName", "email"],
       })
       .exec((error, data) => {
         return error ? callback(error, null) : callback(null, data);
