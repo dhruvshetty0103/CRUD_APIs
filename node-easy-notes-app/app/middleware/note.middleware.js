@@ -9,7 +9,7 @@ class noteValidation {
       });
     }
     //validate title name
-    var pattern = new RegExp("^[a-zA-Z][a-zA-Z0-9]{2,}$");
+    var pattern = new RegExp("^[a-zA-Z][a-zA-Z0-9]{2,}");
     if (!pattern.test(req.body.title)) {
       return res.status(400).send({
         message:
