@@ -3,13 +3,14 @@ const userController = require('../controllers/user/user.controller.js')
 const userRoute = express.Router()
 const userMiddleware = require('../middleware/user.middleware')
 const { body } = require('express-validator')
-
+const cors=require('cors')
 //User login
-userRoute.post('/login', userController.loginUser)
+userRoute.post('/login',cors(), userController.loginUser)
 
 // Create a new User
 userRoute.post(
   '/',
+  cors(),
   body('firstName')
     .matches('^[A-Z][a-zA-Z]{2,}')
     .withMessage(
@@ -26,14 +27,15 @@ userRoute.post(
 )
 
 // Retrieve all Notes
-userRoute.get('/', userController.findAll)
+userRoute.get('/',cors(), userController.findAll)
 
 // Retrieve a single Note with noteId
-userRoute.get('/:userId', userController.findOne)
+userRoute.get('/:userId', cors(),userController.findOne)
 
 // Update a Note with noteId
 userRoute.put(
   '/:userId',
+  cors(),
   body('firstName')
     .matches('^[A-Z][a-zA-Z]{2,}')
     .withMessage(
@@ -50,12 +52,12 @@ userRoute.put(
 )
 
 // Delete a Note with noteId
-userRoute.delete('/:userId', userController.deleteOne)
+userRoute.delete('/:userId', cors(),userController.deleteOne)
 
 //forgot password route
-userRoute.post('/forgot', userController.forgotPassword)
+userRoute.post('/forgot',cors(), userController.forgotPassword)
 
 //email password reset route
-userRoute.post('/reset/:token', userController.resetPassword)
+userRoute.post('/reset/:token',cors(), userController.resetPassword)
 
 module.exports = userRoute
