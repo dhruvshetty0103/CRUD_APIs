@@ -159,10 +159,14 @@ class userController {
     userService
       .forgotPassword(email)
       .then((data) => {
-        res.send("Result:" + data);
+        responseObject = dtoObject.userValidationSuccess;
+        responseObject.message = "Email sent";
+        return res.send(responseObject);
       })
       .catch((err) => {
-        res.send(err);
+        responseObject = dtoObject.userValidationFailure;
+        responseObject.message = err;
+        return res.send(responseObject);
       });
   };
   

@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const NoteSchema = mongoose.Schema({
     title: String,
     content: String,
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    isTrash:Boolean
 }, {
     timestamps: true
 });
@@ -17,6 +18,7 @@ class noteModel {
         title: title,
         content: content,
         userId: userId,
+        isTrash:false
       });
       return note.save((err, data) => {
         return err ? callback(err, null) : callback(null, data);
@@ -61,6 +63,7 @@ class noteModel {
         {
           title: body.title,
           content: body.content,
+          isTrash:body.isTrash
         },
         { new: true },
         (error, data) => {
@@ -70,6 +73,7 @@ class noteModel {
           if (!data) {
             return callback("You dont have access to this note", null);
           } else {
+            console.log(data);
             return callback(null, data);
           }
         }

@@ -6,7 +6,7 @@ const userRouter = require('./app/routes/user.routes.js');
 const db = require('./config/dbConnect.js');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
-const cors=require('cors')
+const cors=require('cors');
 
 
 // create express app
@@ -16,15 +16,9 @@ app.use(express.urlencoded({
     extended: false
 }))
 app.use(express.json());
-
-app.use('/notes',cors({
-    origin: 'http://localhost:3000',
-    optionsSuccessStatus: 200
-}),noteRouter);
-app.use('/users',cors({
-    origin: 'http://localhost:3000',
-    optionsSuccessStatus: 200
-}),userRouter);
+app.use(cors());
+app.use('/notes',noteRouter);
+app.use('/users',userRouter);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 

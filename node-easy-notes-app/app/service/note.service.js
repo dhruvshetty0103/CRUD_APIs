@@ -21,7 +21,7 @@ class noteService {
   };
 
   updateNote = (userId,noteId, body,callback) => {
-    noteModel.updateNote(userId,noteId,body.title,body.content,(err,data) => {
+    noteModel.updateNote(userId,noteId,body,(err,data) => {
         return err ? callback(err, null) : callback(null, data);
       }
     );

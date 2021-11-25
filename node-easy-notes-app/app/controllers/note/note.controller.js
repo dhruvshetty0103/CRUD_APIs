@@ -11,7 +11,7 @@ class noteController {
       if (err) {
         responseObject = dtoObject.noteApiFailure;
         responseObject.message = err.message;
-        res.send(responseObject);
+        return res.send(responseObject);
       }
       responseObject = dtoObject.noteApiSuccess;
       responseObject.message = data;
@@ -25,7 +25,7 @@ class noteController {
       if (err) {
         responseObject = dtoObject.noteApiFailure;
         responseObject.message = err.message;
-        res.send(responseObject);
+        return res.send(responseObject);
       }
       responseObject = dtoObject.noteApiSuccess;
       responseObject.message = data;
@@ -42,7 +42,7 @@ class noteController {
         if (err.kind === "ObjectId") {
           responseObject = dtoObject.noteApiFindFailure;
           responseObject.message = err.message;
-          res.send(responseObject);
+          return res.send(responseObject);
         }
         responseObject = dtoObject.noteApiFailure;
         responseObject.message = err.message;
@@ -50,7 +50,7 @@ class noteController {
       }
       if (!data) {
         responseObject = dtoObject.noteApiFindFailure;
-        res.send(responseObject);
+        return res.send(responseObject);
       }
       responseObject = dtoObject.noteApiSuccess;
       responseObject.message = data;
@@ -66,19 +66,19 @@ class noteController {
         if (err.kind === "ObjectId") {
           responseObject = dtoObject.noteApiFindFailure;
           responseObject.message = err.message;
-          res.send(responseObject);
+          return res.send(responseObject);
         }
         responseObject = dtoObject.noteApiFailure;
         responseObject.message = err.message;
-        res.send(responseObject);
+        return res.send(responseObject);
       }
       if (!data) {
         responseObject = dtoObject.noteApiFindFailure;
-        res.send(responseObject);
+        return res.send(responseObject);
       }
       responseObject = dtoObject.noteApiSuccess;
       responseObject.message = data;
-      res.send(responseObject);
+      return res.send(responseObject);
     });
   };
 
@@ -89,19 +89,19 @@ class noteController {
         if (err.kind === "ObjectId") {
           responseObject = dtoObject.noteApiFindFailure;
           responseObject.message = err.message;
-          res.send(responseObject);
+          return res.send(responseObject);
         }
         responseObject = dtoObject.noteApiFailure;
         responseObject.message = err.message;
-        res.send(responseObject);
+        return res.send(responseObject);
       }
       if (!data) {
         responseObject = dtoObject.noteApiFindFailure;
-        res.send(responseObject);
+        return res.send(responseObject);
       }
       responseObject = dtoObject.noteApiSuccess;
       responseObject.message = "deleted successfully";
-      res.send(responseObject);
+      return res.send(responseObject);
     });
   };
 }

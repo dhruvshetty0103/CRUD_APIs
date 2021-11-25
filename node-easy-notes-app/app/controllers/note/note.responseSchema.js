@@ -1,6 +1,6 @@
 module.exports = {
     noteApiSuccess: {
-        status:201,
+        status:200,
         message:""
     },
     noteApiFailure:{

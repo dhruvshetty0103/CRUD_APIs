@@ -8,7 +8,7 @@ exports.generateToken = (id) => {
       id: id,
     },
     process.env.mySecretKey,
-    { expiresIn: "1h" }
+    { expiresIn: "1d" }
   );
 };
 
