@@ -28,7 +28,7 @@ class noteValidation {
     const token = bearer[1];
     jwtHelper.verifyToken(token, (err, data) => {
       if (err) {
-        res.send(err);
+       return res.send(err);
       }
       req.body.userId = data.id;
       next();

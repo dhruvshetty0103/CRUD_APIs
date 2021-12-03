@@ -1,14 +1,18 @@
 const mongoose = require('mongoose');
 
-const NoteSchema = mongoose.Schema({
+const NoteSchema = mongoose.Schema(
+  {
     title: String,
     content: String,
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     isTrash:Boolean,
-    color:String
-}, {
-    timestamps: true
-});
+    color:String,
+    image:String
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const myNote = mongoose.model("Note", NoteSchema);
 
@@ -20,7 +24,8 @@ class noteModel {
         content: content,
         userId: userId,
         isTrash:false,
-        color:"White"
+        color:"white",
+        image:""
       });
       return note.save((err, data) => {
         return err ? callback(err, null) : callback(null, data);
@@ -58,15 +63,13 @@ class noteModel {
     // Update a note identified by the noteId in the request
     updateNote = (userId, noteId, body, callback) => {
       return myNote.findOneAndUpdate(
-        { 
-          userId: userId, 
-          _id: noteId 
-        },
+        { userId: userId, _id: noteId },
         {
           title: body.title,
           content: body.content,
           isTrash:body.isTrash,
-          color:body.color
+          color:body.color,
+          image:body.image
         },
         { new: true },
         (error, data) => {

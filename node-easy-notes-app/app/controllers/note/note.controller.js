@@ -1,5 +1,7 @@
 const noteService = require("../../service/note.service.js");
 const dtoObject=require("../note/note.responseSchema.js");
+const logger = require("../../../logger/logger.js");
+const multer = require("../../../utility/multer");
 
 let responseObject;
 
@@ -104,7 +106,24 @@ class noteController {
       return res.send(responseObject);
     });
   };
-}
 
+  /**
+   * @description Handles the request and response for posting a image
+   * @param {Object} req
+   * @param {Object} res
+   */
+uploadImage = (req, res) => {
+  const upload = multer();
+  upload(req, res, (err) => {
+    if (err) {
+      logger.error("Could not upload image", err);
+      res.status(400).send(err);
+    } else {
+      logger.info(res);
+      res.status(200).send(req.file);
+    }
+  });
+}
+}
 
 module.exports = new noteController();

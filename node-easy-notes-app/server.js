@@ -7,6 +7,10 @@ const db = require('./config/dbConnect.js');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 const cors=require('cors');
+const multer = require("multer");
+const path = require("path");
+const middleware = require("./app/middleware/note.middleware");
+
 
 
 // create express app
@@ -21,6 +25,9 @@ app.use('/notes',noteRouter);
 app.use('/users',userRouter);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+//image upload
+app.use(express.static("uploads"));
 
 mongoose.Promise = global.Promise;
 

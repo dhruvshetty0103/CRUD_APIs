@@ -19,4 +19,8 @@ noteRoute.put("/:noteId",noteMiddleware.ensureToken, noteController.updateNote);
 // Delete a Note with noteId
 noteRoute.delete("/:noteId",noteMiddleware.ensureToken, noteController.deleteOne);
 
+
+//image upload
+noteRoute.post("/upload-image", noteMiddleware.ensureToken, noteController.uploadImage);
+
 module.exports = noteRoute;
