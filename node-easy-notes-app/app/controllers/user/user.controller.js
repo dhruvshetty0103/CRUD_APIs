@@ -34,7 +34,7 @@ class userController {
     if (!errors.isEmpty()) {
       responseObject = dtoObject.userApiFailure;
       responseObject.message = errors.array();
-      res.send(responseObject);
+      return res.send(responseObject);
     }
     let body = req.body;
     userService.createUser(body, (err, data) => {
@@ -42,12 +42,12 @@ class userController {
         logger.error(err);
         responseObject = dtoObject.userApiFailure;
         responseObject.message = err.message;
-        res.send(responseObject);
+        return res.send(responseObject);
       }
       logger.info("Registeration Successful");
       responseObject = dtoObject.userApiSuccess;
       responseObject.message = data;
-      res.send(responseObject);
+      return res.send(responseObject);
     });
   };
 

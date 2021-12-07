@@ -37,3 +37,5 @@ const server=app.listen(4000, () => {
     logger.info("Server is listening on port 4000");
     db.dbConnection();
 });
+
+module.exports=server;
