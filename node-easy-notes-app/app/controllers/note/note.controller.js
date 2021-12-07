@@ -17,7 +17,7 @@ class noteController {
       }
       responseObject = dtoObject.noteApiSuccess;
       responseObject.message = data;
-      res.send(responseObject);
+      return res.send(responseObject);
     });
   };
 
@@ -31,14 +31,13 @@ class noteController {
       }
       responseObject = dtoObject.noteApiSuccess;
       responseObject.message = data;
-      res.send(responseObject);
+      return res.send(responseObject);
     });
   };
 
   // Find a single note with a noteId
   findOne = (req, res) => {
     noteService.findOne(req.body.userId, req.params.noteId, (err, data) => {
-      console.log("result: " + data);
       if (err) {
         console.log(err);
         if (err.kind === "ObjectId") {
@@ -48,7 +47,7 @@ class noteController {
         }
         responseObject = dtoObject.noteApiFailure;
         responseObject.message = err.message;
-        res.send(responseObject);
+        return res.send(responseObject);
       }
       if (!data) {
         responseObject = dtoObject.noteApiFindFailure;
@@ -56,7 +55,7 @@ class noteController {
       }
       responseObject = dtoObject.noteApiSuccess;
       responseObject.message = data;
-      res.send(responseObject);
+      return res.send(responseObject);
     });
   };
 
@@ -117,10 +116,10 @@ uploadImage = (req, res) => {
   upload(req, res, (err) => {
     if (err) {
       logger.error("Could not upload image", err);
-      res.status(400).send(err);
+      return res.status(400).send(err);
     } else {
       logger.info(res);
-      res.status(200).send(req.file);
+      return res.status(200).send(req.file);
     }
   });
 }

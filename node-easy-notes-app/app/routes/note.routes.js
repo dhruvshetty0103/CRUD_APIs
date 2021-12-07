@@ -14,7 +14,7 @@ noteRoute.get("/",noteMiddleware.ensureToken, noteController.findAll);
 noteRoute.get("/:noteId",noteMiddleware.ensureToken, noteController.findOne);
 
 // Update a Note with noteId
-noteRoute.put("/:noteId",noteMiddleware.ensureToken, noteController.updateNote);
+noteRoute.put("/:noteId",noteMiddleware.ensureToken,noteMiddleware.validate, noteController.updateNote);
 
 // Delete a Note with noteId
 noteRoute.delete("/:noteId",noteMiddleware.ensureToken, noteController.deleteOne);

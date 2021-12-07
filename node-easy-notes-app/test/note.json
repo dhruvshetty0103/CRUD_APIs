@@ -1,0 +1,14 @@
+{
+  "loginDetails": {
+    "email": "dhruvshetty0103@gmail.com",
+    "password": "joe"
+  },
+  "ValidNoteData":{
+    "title": "Demo Note",
+    "content": "My Demo Note"
+  },
+  "InvalidNoteData":{
+    "title": "",
+    "content": "My Demo Note"
+  }
+}
