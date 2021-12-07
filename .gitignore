@@ -3,3 +3,4 @@ node-easy-notes-app/node_modules/
 node-easy-notes-app/package-lock.json/
 node-easy-notes-app/.ENV
 node-easy-notes-app/uploads
+node-easy-notes-app/.nyc_output
