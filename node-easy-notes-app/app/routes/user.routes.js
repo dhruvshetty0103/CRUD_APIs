@@ -25,7 +25,7 @@ userRoute.post(
 )
 
 // Retrieve all Notes
-userRoute.get('/', userController.findAll)
+userRoute.get('/', userController.findAllUser)
 
 // Retrieve a single Note with noteId
 userRoute.get('/:userId', userController.findOne)

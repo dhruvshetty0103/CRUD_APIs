@@ -52,19 +52,19 @@ class userController {
   };
 
   // Retrieve and return all users from the database.
-  findAll = (req, res) => {
-    userService.findAll((err, data) => {
-      if (err) {
-        logger.error(err);
-        responseObject = dtoObject.userApiFailure;
-        responseObject.message = err.message;
-        res.send(responseObject);
-      }
-      logger.info("Retrieval successfull");
+  findAllUser = async(req, res) => {
+    try {
+      let data = await userService.findAllUser()
       responseObject = dtoObject.userApiSuccess;
       responseObject.message = data;
-      res.send(responseObject);
-    });
+      logger.info("Retrieval successfull");
+      return res.send(responseObject);
+    } catch (error) {
+      logger.error(error);
+      responseObject = dtoObject.userApiFailure;
+      responseObject.message = error.message;
+      return res.send(responseObject);
+    }
   };
 
   // Find a single user with a userId

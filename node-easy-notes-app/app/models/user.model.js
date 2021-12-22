@@ -45,11 +45,14 @@ class userModel {
   }
 
   // Retrieve and return all users from the database.
-  findAll = (callback) => {
-    return myUser.find((err, data) => {
-      return err ? callback(err, null) : callback(null, data)
-    })
-  }
+  findAllUser = async () => {
+    try {
+      let data = await myUser.find();
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  };
 
   // Find a single user with a userId
   findOne = (userId, callback) => {

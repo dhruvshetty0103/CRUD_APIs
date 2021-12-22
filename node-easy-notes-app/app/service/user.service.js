@@ -2,6 +2,7 @@ const userModel = require('../models/user.model.js')
 const bcrypt = require('bcrypt')
 const mailHelper = require('../../utility/node.mailer.js')
 const jwtHelper = require('../../utility/jwt.js')
+const redis = require("../../utility/redis/cache")
 class userService {
   /**
    * @description Service layer function for user login
@@ -37,11 +38,19 @@ class userService {
     )
   }
 
-  findAll = (callback) => {
-    userModel.findAll((err, data) => {
-      return err ? callback(err, null) : callback(null, data)
-    })
-  }
+  findAllUser = async () => {
+    try {
+      let data = await redis.getUser("user")
+      if(data === null){
+        data = await userModel.findAllUser();
+        await redis.setUser("user",JSON.stringify(data))
+      }
+      await redis.closeConnection();
+      return JSON.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  };
 
   findOne = (email, callback) => {
     userModel.findOne(email, (err, data) => {
